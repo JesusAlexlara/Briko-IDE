@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Briko</title>
+
+    <link rel="stylesheet" href="css/estilo.css" type="text/css" media="screen" charset="utf-8">
+    <script async="true" src="https://use.edgefonts.net/source-code-pro.js"></script>
+
+    <link href="./doc/site/images/favicon.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+	<div id="optionsPanel">
+		<a href="http://briko.cc">
+    		<img id="c9-logo" src="img/logo.png">
+  		</a>
+  		<ul id="navigation" class="nav-main">
+			<li><a href="#">Compilar</a></li>
+    		<li><a href="#">Subir</a></li>
+    		<li><a onclick="New()">Nuevo</a>
+    		<li><a href="#">Guardar</a></li>
+    		
+    		<li class="list"><a href="#">Ejemplos</a>
+    			<ul class="nav-sub">
+    				
+    				<li class="list"><a href="#">LedsBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a onclick="LedsB()">LedsBringhtness</a></li>
+    					    <li><a onclick="LedsColor()">LedsColor</a></li>
+    					</ul>
+    					
+				  <li class="list"><a href="#">ButtonsBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a onclick="ButtonR()">ButtonRead</a></li>
+    					    <li><a onclick="ButtonR2()">ButtonRead2</a></li>
+    					    <li><a onclick="ButtonRB()">ButtonReadBits</a></li>
+    					</ul>
+
+				  <li class="list"><a href="#">BuzzerBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a onclick="BuzzerB()">BuzzerBeep</a></li>
+    					    <li><a onclick="BuzzerP()">BuzzerPlaytone</a></li>
+    					    <li><a onclick="BuzzerT()">BuzzerTurn</a></li>
+
+    					</ul>
+				  <li class="list"><a href="#">DistanceBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a onclick="DistanceR()">DistanceRead</a></li>
+    					</ul>	
+    			</ul>
+    	</ul>
+	</div>
+
+
+
+<div style="width:100%;height:82%;position: relative;">
+
+<div id="editor"><pre>
+// Aqui se declaran los modulos que vas a utilizar
+
+code(){
+// Aqui se escribe tu programa
+
+}</pre></div>
+</div>
+
+	<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.getSession().setMode("ace/mode/c_cpp");
+	</script>
+
+<script>
+function LedsB() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nledsbk leds(PORT1);	//Declara el modulo de leds en el puerto 1\n\n	//Codigo principal que corre por siempre\n\ncode(){\n\nleds.color(1,WHITE);	//Prende el primer led de color blanco\nleds.brightness(255);	//Cambia la intensidad del led a 255\ndelay(1000);		//Espera 1000 milisegundos\nleds.brightness(100);	//Cambia la intensidad del led a 100\ndelay(1000);		//Espera 1000 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function New() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("// Aqui se declaran los modulos que vas a utilizar\n\ncode(){\n\n// Aqui se escribe tu programa}\n\n}");
+}
+</script>
+
+<script>
+function LedsColor() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nledsbk leds(PORT1);	//Declara el modulo de led en el Puerto1\n\n		//Codigo principal que corre por siempre\n\ncode(){\n\n	leds.color(1,RED);	//Prende el led 1 rojo\n	leds.color(2,BLUE);	//Prende el led 2 azul\n	leds.color(3,GREEN);	//Prende el led 3 verde\n	leds.color(4,YELLOW);	//Prende el led 4 amarillo\n	leds.color(5,PURPLE);	//Prende el led 5 morado\n	delay(1000);		//Espera 1000 milisegundos\n	leds.color(BLACK);	//Apaga TODOS los leds\n	delay(1000);		//Espera 1000 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function ButtonR() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nbuttonsbk Buttons(PORT1);	// Declara el modulo de botones en el puerto 1\nint boton;			// Variable para guardar el boton que presionas\n\n				//Codigo principal que corre por siempre\ncode(){\n\nboton = Buttons.read();	//Lee que boton presionas\nbk7print(boton);		//Imprime en pantalla\ndelay(250);			//Espera 250 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function ButtonR2() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nbuttonsbk Buttons(PORT1);	// Declara el modulo de botones en el puerto 1\nint boton;			// Variable para guardar el boton que presionas\n\n			//Codigo principal que corre por siempre\ncode(){\n\nboton = Buttons.read(1);	//Lee si presionas o no el boton 1\nbk7print(boton);		//Imprime en pantalla\ndelay(250);			//Espera 250 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function ButtonRB() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nbuttonsbk Buttons(PORT1);	// Declara el modulo de botones en el puerto 1\nint boton;			// Variable para guardar el boton que presionas\n\n				//Codigo principal que corre por siempre\ncode(){\n\nboton = Buttons.readbits();	//Lee que boton presionas\nbk7print(boton);		//Imprime en pantalla\ndelay(250);			//Espera 250 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function BuzzerB() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nbuzzerbk buzzer(PORT1);	//Declara el modulo de buzzer en el Puerto 1\n\n				//Codigo principal que corre por siempre\ncode(){\n\nbuzzer.beep(500,1000);	//Enciende el buzzer por 500 milisegundos y lo apaga por 1000\ndelay(1200);			//Espera 1200 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function BuzzerP() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nbuzzerbk buzzer(PORT1);		//Declara el modulo de buzzer en el Puerto 1\n\n					//Codigo principal que corre por siempre\ncode(){\n\nbuzzer.playtone(1050);		//Toca una nota musical en el buzzer\ndelay(500);				//Delay de 500 milisegundos\nbuzzer.playtone(1870,1500);		//Toca una nota musical en el buzzer por 1500 milisegundos y luego lo apaga\ndelay(2000);				//Delay de 2000 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function BuzzerT() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\nbuzzerbk buzzer(PORT1);	//Declara el modulo de buzzer en el Puerto 1\n\n				//Codigo principal que corre por siempre\ncode(){\n\nbuzzer.set(ON);		//Prende el buzzer\ndelay(500);			//Delay de 500 milisegundos\nbuzzer.set(OFF);		//Apaga el buzzer\ndelay(500);			//Delay de 500 milisegundos\n\n}");
+}
+</script>
+
+<script>
+function DistanceR() {
+	editor.selectAll();
+	editor.removeLines();
+    editor.insert("\ndistancebk sensor_sharp(PORT1);	//Declara el Modulo de distancia en el puerto 1\nfloat distance_cm;			//Variable para guardar la distancia en cm\n\n					//Codigo principal que corre por siempre\ncode(){\n\ndistance_cm = sensor_sharp.read(CM);		// Lee la distancia en cm\nbk7print(distance_cm);			// Imprime en pantalla\ndelay(250);					// Espera 250 milisegundos\n\n}");
+}
+</script>
+	
+<div id="monitor">
+<iframe style="height: 90px; position: absolute; float: rigth; padding-right: 100px; bottom:0px; width: 100%; float:left;" allowTransparency="true" src="https://codebender.cc/embed/serialmonitor" frameborder="0"></iframe>
+
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Briko</title>
+
+    <link rel="stylesheet" href="css/estilo.css" type="text/css" media="screen" charset="utf-8">
+    <script async="true" src="https://use.edgefonts.net/source-code-pro.js"></script>
+
+    <link href="./doc/site/images/favicon.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+	<div id="optionsPanel">
+		<a href="http://briko.cc">
+    		<img id="c9-logo" src="img/logo.png">
+  		</a>
+  		<ul id="navigation" class="nav-main">
+			<li><a href="#">Verificar</a></li>
+    		<li><a href="#">Subir</a></li>
+    		<li><a href="#">Nuevo</a>
+    		<li><a href="#">Guardar</a></li>
+    		<li><a href="#">Compilar</a></li>
+    		
+    		<li class="list"><a href="#">Ejemplos</a>
+    			<ul class="nav-sub">
+    				
+    				<li class="list"><a href="#">LedsBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a href="#">LedsBringhtness</a></li>
+    					    <li><a href="#">LedsColor</a></li>
+    					</ul>
+    					
+				  <li class="list"><a href="#">BottonsBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a href="#">BottonRead</a></li>
+    					    <li><a href="#">BottonRead2</a></li>
+    					 	<li><a href="#">BottonReadBits</a></li>
+
+    					</ul>
+
+				  <li class="list"><a href="#">BuzzerBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a href="#">BuzzerBeep</a></li>
+    					    <li><a href="#">BuzzerPlaytone</a></li>
+    					 	<li><a href="#">BuzzerTurn</a></li>
+
+    					</ul>
+				  <li class="list"><a href="#">DistanceBK</a>
+    					<ul class="nav-sub-sub">
+    					    <li><a href="#">DistanceRead</a></li>
+    					</ul>	
+    			</ul>
+    	</ul>
+	</div>
+<div style="width:100%;height:645px;position: relative;">
+
+<div id="editor"><pre>
+</pre></div>
+</div>
+
+	<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+    var editor = ace.edit("editor");
+    editor.insert("// Aqui se declaran los modulos que vas a utilizar\ncode(){\n/ Aqui se escribe tu programa");
+    editor.setTheme("ace/theme/twilight");
+    editor.getSession().setMode("ace/mode/c_cpp");
+	</script>
+	
+<div id="monitor">
+<iframe style="height: 90px; position: absolute; float: rigth; padding-right: 100px; bottom:0px; width: 100%; float:left;" allowTransparency="true" src="https://codebender.cc/embed/serialmonitor" frameborder="0"></iframe>
+
+</div>
+</body>
+
+
+</html>

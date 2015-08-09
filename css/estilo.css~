@@ -1,0 +1,180 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif, Tahoma, Verdana, sans-serif;
+    font-size: 12px;
+    background: rgb(242, 242, 242);
+    color: black;
+}
+
+#c9-logo, #ace-logo {
+    padding: 0;
+    border: none;
+}
+
+#editor-container {
+    position: absolute;
+    top:  70px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: white;
+}
+
+#controls {
+    padding: 5px;
+}
+
+#controls td {
+    text-align: right;
+}
+
+#controls td + td {
+    text-align: left;
+}
+
+.ace_status-indicator {
+    color: gray;
+    position: absolute;
+    right: 0;
+    border-left: 1px solid;
+}
+
+#editor {
+	margin: 0;
+   position: absolute;
+   top: 85px;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   font-size:16px;
+}
+
+#navigation {
+	margin:0;
+	padding: 0;
+	clear:both;
+	width:1000px;
+	height:100px;
+   position: absolute;
+   top:  11px;
+   left: 350px;
+   bottom: 0px;
+   right: 0px;
+}
+
+#optionsPanel {
+	position: absolute;
+	height: 100%;
+	width: 260px;
+	
+}
+
+#c9-logo{
+	width: 172px;
+	margin: 10px 30px -12px 51px;
+}
+
+ul.nav-main,
+ul.nav-main li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+ul.nav-main {
+	position: relative;
+	z-index: 597;
+}
+
+ul.nav-main li:hover > ul {
+	visibility: visible;
+}
+
+
+ul.nav-main li.hover,
+ul.nav-main li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: pointer;
+	background: rgb(202, 202, 203);
+	border-radius: 15px;
+	
+}
+
+
+
+ul.nav-main li {
+	float:left;
+	display:block;
+	height: 51px;
+	color: #999;
+	font: 24px Arial, Helvetica, sans-serif;
+	background: url(images/separator.gif) no-repeat right center;
+}
+
+ul.nav-main li a {
+	display:block;
+	padding: 16px 16px 0 16px;
+	height: 35px;
+	color: #999;
+	font: 20px Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	}
+
+ul.nav-main li a:hover {
+	color:#D6D6D6;
+	}
+
+ul.nav-main *.list {
+	padding-right: 22px;
+	background: url(images/navigation-arrow.gif) no-repeat right top;
+}
+
+
+
+ul.nav-sub {
+	visibility: hidden;
+	position: absolute;
+	padding:10px;
+	top: 48px;
+	left: 0;
+	z-index: 598;
+	background: #353535 url(images/dropdown-list-bg.gif) repeat-x left top;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+}
+
+
+ul.nav-sub li {
+	list-style:none;
+	display:block;
+	padding: 0;
+	height: 27px;
+	float: none;
+	width:145px;
+	border-bottom: 1px solid #5a5a5a;
+	background: none;
+}
+
+ul.nav-sub li a {
+	list-style:none;
+	display:block;
+	padding: 6px 5px 6px 5px;
+	height: 15px;
+	float: none;
+	width:145px;
+	background: none;
+	font: 12px Arial, Helvetica, sans-serif;	
+}
